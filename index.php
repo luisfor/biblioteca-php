@@ -1,4 +1,7 @@
-<?php require_once("componentes/componentes.php") ?>
+<?php 
+	require_once("componentes/componentes.php");
+	require_once("bd/operaciones.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
