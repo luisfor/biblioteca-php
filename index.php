@@ -33,7 +33,7 @@
 							<?php inputElementos("<i class='fa fa-dollar-sign'></i>", "Precio","precio_libro", ""); ?>
 						</div>
 					</div>
-					<div class="d-flex">
+					<div class="d-flex justify-content-center">
 						<?php buttonElementos("btn-create", "btn btn-success", "<i class='fa fa-plus'></i>", "crear", "data-toggle='tooltip' data-placement='bottom' title='Crear'"); ?>
 						<?php buttonElementos("btn-read", "btn btn-primary", "<i class='fa fa-sync'></i>", "leer", "data-toggle='tooltip' data-placement='bottom' title='leer'"); ?>
 						<?php buttonElementos("btn-update", "btn btn-light border", "<i class='fa fa-pen-alt'></i>", "editar", "data-toggle='tooltip' data-placement='bottom' title='Editar'"); ?>
@@ -41,7 +41,28 @@
 					</div>
 				</form>
 			</div>
-
+			<div class="d-flex table-data">
+				<table class="table table-striped table-dark">
+					<thead class="thead-dark">
+						<tr>
+							<th>ID</th>
+							<th>Nombre del Libro</th>
+							<th>Editorial</th>
+							<th>Precio</th>
+							<th>Editar</th>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+						<tr>
+							<td>1</td>
+							<td>Nombre libro</td>
+							<td>Acantilado</td>
+							<td>44.99</td>
+							<td><i class="fa fa-edit btnedit"></i></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
 		</div>
 	</main>
