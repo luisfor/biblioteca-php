@@ -4,7 +4,7 @@
 							<div class=\"input-group-prepend\">
 								<div class=\"input-group-text bg-warning\">$icono</div>
 							</div>
-							<input type=\"text\" autocomplete=\"off\" class=\"form-control\" name='$name' id=\"idnombre\" placeholder='$placeholder' value='$value' '$atributo'>
+							<input type=\"text\" autocomplete=\"off\" class=\"form-control\" name='$name' id=\"idnombre\" placeholder='$placeholder' value='$value' $atributo>
 						</div>";
 						echo $elementos;
 	}

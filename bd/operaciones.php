@@ -14,7 +14,16 @@
 	if (isset($_POST['editar'])) {
 		actualizarDatos();
 	}
-	
+
+	//boton Eliminar datos
+	if (isset($_POST['eliminar'])) {
+		borrarDatos();
+	}
+
+	//boton Eliminar todos los datos de la base de datos
+	if (isset($_POST['eliminar_todo'])) {
+		borrarTodo();
+	}	
 
 
 	//funcion de creacion de libros en la base de datos
@@ -64,8 +73,6 @@
 			/*while ($row = mysqli_fetch_assoc($resultado)) {
 				echo "id: ".$row['id']."Nombre Libro: ".$row['nombre_libro'];
 			}*/
-		}else{
-			return "La base de datos esta vacia";
 		}
 		
 	}
@@ -93,7 +100,42 @@
 
 	//borrar datos
 	function borrarDatos(){
-		
+		$libroid = (int)inputValue("Id_libro");
+
+			$sql = "DELETE FROM libros where id = '$libroid' ";
+
+			if (mysqli_query($GLOBALS['con'], $sql)) {
+				mensajes("success", "Datos Borrados con exito de la base de datos");
+			} else {
+				mensajes("error", mysqli_error($GLOBALS['con']));
+			}
 	}
+
+	//funcion para habilitar el boton borrar todo cuando hallan mas de 3 registros
+	function botonBorraHabilitar(){
+		$resultado = getDatos();
+		$i = 0;
+		if ($resultado) {
+			while ($row = mysqli_fetch_assoc($resultado)) {
+				$i++;
+				if ($i>3) {
+					buttonElementos("btn-deleteall", "btn btn-danger", "<i class='fa fa-trash'></i> Eliminar Todo", "eliminar_todo", "data-toggle='tooltip' data-placement='bottom' title='Eliminar Todo'");
+					return;
+				}
+			} 
+		}
+	}
+
+	//funcion para borrar todos los datos de l abase de datos
+	function borrarTodo(){
+		$sql = "DROP TABLE libros";
+		if (mysqli_query($GLOBALS['con'], $sql)) {
+				mensajes("success", "Todos los Datos se han Borrados con exito de la base de datos");
+				getDatos();
+			} else {
+				mensajes("error", mysqli_error($GLOBALS['con']));
+			}
+		
+	} 
 
 ?>
