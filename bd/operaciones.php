@@ -17,4 +17,14 @@
 		
 	}
 
+	//funcion para validar los inputs
+	function inputValue($value){
+		$inputs = mysqli_real_escape_string($GLOBALS['con'], trim($_POST[$value]));
+		if (empty($inputs)) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 ?>
