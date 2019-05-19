@@ -1,3 +1,4 @@
+<?php require_once("componentes/componentes.php") ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,14 +20,11 @@
 			<div class="d-flex justify-content-center">
 				<form action="" method="post" accept-charset="utf-8" class="w-50">
 					<div class="py-2">
-						<div class="input-group mb-2">
-							<div class="input-group-prepend">
-								<div class="input-group-text bg-warning"><i class="fa fa-id-badge"></i></div>
-							</div>
-							<input type="text" autocomplete="off" class="form-control" name="" id="idnombre" placeholder="ID">
-						</div>
+						<?php inputElementos(); ?>
 					</div>
-					
+					<div class="pt-2">
+						<?php inputElementos(); ?>
+					</div>
 				</form>
 			</div>
 
