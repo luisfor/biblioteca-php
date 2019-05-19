@@ -22,8 +22,8 @@
 			$sql=" 
 				create table if not exists libros(
 					id int not null auto_increment primary key,
-					nombre_libro varchar(25) not null,
-					editorial varchar(20),
+					nombre_libro varchar(100) not null,
+					editorial varchar(100),
 					precio float
 				);
 			";

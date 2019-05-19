@@ -10,8 +10,14 @@
 		//echo "click en el boton crear";
 	}
 
+	//boton editar datos
+	if (isset($_POST['editar'])) {
+		actualizarDatos();
+	}
+	
 
-	//funcion de creacion de libreo en la base de datos
+
+	//funcion de creacion de libros en la base de datos
 	function crearDatos(){
 		$libronombre = inputValue("nombre_libro");
 		$editorial = inputValue("editorial_libro");
@@ -61,6 +67,32 @@
 		}else{
 			return "La base de datos esta vacia";
 		}
+		
+	}
+
+	function actualizarDatos(){
+		$libroid = inputValue("Id_libro");
+		$libronombre = inputValue("nombre_libro");
+		$editorial = inputValue("editorial_libro");
+		$precio = inputValue("precio_libro");
+
+		if ($libronombre && $editorial && $precio) {
+			$sql = "UPDATE libros set nombre_libro = '$libronombre', editorial = '$editorial', precio ='$precio' where id = '$libroid' ";
+
+			if (mysqli_query($GLOBALS['con'], $sql)) {
+				mensajes("success", "Datos Actualizado con exito en la base de datos");
+			} else {
+				mensajes("error", mysqli_error($GLOBALS['con']));
+			}
+			
+		}else{
+			mensajes("error", "Selecioines un dato usando el icono de editar en el listado de la tabla");
+		}
+		
+	}
+
+	//borrar datos
+	function borrarDatos(){
 		
 	}
 

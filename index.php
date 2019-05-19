@@ -23,17 +23,17 @@
 			<div class="d-flex justify-content-center">
 				<form action="" method="post" accept-charset="utf-8" class="w-50">
 					<div class="pt-2">
-						<?php inputElementos("<i class='fa fa-id-badge'></i>", "ID","Id_libro", ""); ?>
+						<?php inputElementos("<i class='fa fa-id-badge'></i>", "ID","Id_libro", "", "disabled"); ?>
 					</div>
 					<div class="pt-2">
-						<?php inputElementos("<i class='fa fa-book'></i>", "Nombre del Libro","nombre_libro", ""); ?>
+						<?php inputElementos("<i class='fa fa-book'></i>", "Nombre del Libro","nombre_libro", "", ""); ?>
 					</div>
 					<div class="row pt-2">
 						<div class="col">
-							<?php inputElementos("<i class='fa fa-people-carry'></i>", "Editorial","editorial_libro", ""); ?>
+							<?php inputElementos("<i class='fa fa-people-carry'></i>", "Editorial","editorial_libro", "", ""); ?>
 						</div>
 						<div class="col">
-							<?php inputElementos("<i class='fa fa-dollar-sign'></i>", "Precio","precio_libro", ""); ?>
+							<?php inputElementos("<i class='fa fa-dollar-sign'></i>", "Precio","precio_libro", "", ""); ?>
 						</div>
 					</div>
 					<div class="d-flex justify-content-center">
@@ -67,16 +67,22 @@
 								while ($row = mysqli_fetch_assoc($resultado)) {
 						?>
 						<tr>
-							<td><?php echo $row['id']; ?></td>
-							<td><?php echo $row['nombre_libro']; ?></td>
-							<td><?php echo $row['editorial']; ?></td>
-							<td><?php echo $row['precio']; ?></td>
-							<td><i class="fa fa-edit btnedit"></i></td>
+							<td data-id="<?php echo $row['id']; ?>"><?php echo $row['id']; ?></td>
+							<td data-id="<?php echo $row['id']; ?>"><?php echo $row['nombre_libro']; ?></td>
+							<td data-id="<?php echo $row['id']; ?>"><?php echo $row['editorial']; ?></td>
+							<td data-id="<?php echo $row['id']; ?>"><?php echo $row['precio']; ?></td>
+							<td><i class="fa fa-edit btnedit" data-id="<?php echo $row['id']; ?>"></i></td>
 						</tr>
 						<?php
-									}
+							 }
 							} else {
-								# code...
+						?>
+							<tr>
+								<td>
+									base de datos esta vacia
+								</td>
+							</tr>
+						<?php
 							}
 							
 						}
@@ -93,5 +99,6 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="js/main.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>

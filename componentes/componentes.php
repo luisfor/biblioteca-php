@@ -1,10 +1,10 @@
 <?php 
-	function inputElementos($icono, $placeholder, $name, $value){
+	function inputElementos($icono, $placeholder, $name, $value, $atributo){
 		$elementos = "<div class=\"input-group mb-2\">
 							<div class=\"input-group-prepend\">
 								<div class=\"input-group-text bg-warning\">$icono</div>
 							</div>
-							<input type=\"text\" autocomplete=\"off\" class=\"form-control\" name='$name' id=\"idnombre\" placeholder='$placeholder' value='$value'>
+							<input type=\"text\" autocomplete=\"off\" class=\"form-control\" name='$name' id=\"idnombre\" placeholder='$placeholder' value='$value' '$atributo'>
 						</div>";
 						echo $elementos;
 	}
