@@ -29,6 +29,7 @@
 			";
 			if (mysqli_query($con, $sql)) {
 				//echo "Tablas creadas con Exito";
+				return $con;
 			} else {
 				echo "Error al Crear tablas en la base de datos ".mysqli_error($con);
 			}

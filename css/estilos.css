@@ -11,3 +11,12 @@ table .btnedit{
 	color: lightsalmon;
 	cursor: pointer;
 }
+.success{
+	background-color: lightgreen;
+	padding: 1em;
+}
+
+.error{
+	background-color: orange;
+	padding: 1em;
+}

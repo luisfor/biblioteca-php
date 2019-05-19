@@ -56,13 +56,32 @@
 						</tr>
 					</thead>
 					<tbody id="tbody">
+						<?php 
+
+						//boton leer libro al hacer click
+						if(isset($_POST['leer'])){
+							$resultado = getDatos();
+
+							if ($resultado) {
+								
+								while ($row = mysqli_fetch_assoc($resultado)) {
+						?>
 						<tr>
-							<td>1</td>
-							<td>Nombre libro</td>
-							<td>Acantilado</td>
-							<td>44.99</td>
+							<td><?php echo $row['id']; ?></td>
+							<td><?php echo $row['nombre_libro']; ?></td>
+							<td><?php echo $row['editorial']; ?></td>
+							<td><?php echo $row['precio']; ?></td>
 							<td><i class="fa fa-edit btnedit"></i></td>
 						</tr>
+						<?php
+									}
+							} else {
+								# code...
+							}
+							
+						}
+						 ?>
+						
 					</tbody>
 				</table>
 			</div>
