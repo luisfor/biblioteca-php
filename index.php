@@ -19,11 +19,25 @@
 			<h1 class="py-4 bg-dark text-light rounded"><i class="fa fa-swatchbook"></i> Libreria</h1>
 			<div class="d-flex justify-content-center">
 				<form action="" method="post" accept-charset="utf-8" class="w-50">
-					<div class="py-2">
-						<?php inputElementos(); ?>
+					<div class="pt-2">
+						<?php inputElementos("<i class='fa fa-id-badge'></i>", "ID","Id_libro", ""); ?>
 					</div>
 					<div class="pt-2">
-						<?php inputElementos(); ?>
+						<?php inputElementos("<i class='fa fa-book'></i>", "Nombre del Libro","nombre_libro", ""); ?>
+					</div>
+					<div class="row pt-2">
+						<div class="col">
+							<?php inputElementos("<i class='fa fa-people-carry'></i>", "Editorial","editorial_libro", ""); ?>
+						</div>
+						<div class="col">
+							<?php inputElementos("<i class='fa fa-dollar-sign'></i>", "Precio","precio_libro", ""); ?>
+						</div>
+					</div>
+					<div class="d-flex">
+						<?php buttonElementos("btn-create", "btn btn-success", "<i class='fa fa-plus'></i>", "crear", "data-toggle='tooltip' data-placement='bottom' title='Crear'"); ?>
+						<?php buttonElementos("btn-read", "btn btn-primary", "<i class='fa fa-sync'></i>", "leer", "data-toggle='tooltip' data-placement='bottom' title='leer'"); ?>
+						<?php buttonElementos("btn-update", "btn btn-light border", "<i class='fa fa-pen-alt'></i>", "editar", "data-toggle='tooltip' data-placement='bottom' title='Editar'"); ?>
+						<?php buttonElementos("btn-delete", "btn btn-danger", "<i class='fa fa-trash-alt'></i>", "eliminar", "data-toggle='tooltip' data-placement='bottom' title='Eliminar'"); ?>
 					</div>
 				</form>
 			</div>
